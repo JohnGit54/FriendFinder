@@ -1,6 +1,7 @@
 
 
 var path = require("path");
+var bodyParser = require('body-parser');
 
 
 var friends = require('../data/friends.js') ;  
@@ -12,6 +13,13 @@ module.exports = function (app) {
         //console.log(" this is export friends" ,friends);
         return res.json(friends);
     });
+
+    //post user information json - perform all logic
+    app.post("/api/friends", function (req, res) {
+        
+        return res.json(friends);
+    });
+
 
 }
 

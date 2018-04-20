@@ -1,12 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <!-- bootstrap items -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+    <!-- bootrap -jquery <popper class="js"></popper> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+
+
+    <title>Survey</title>
 </head>
+
 <body>
-    this is survey
+
+    <div class="container">
+        <!-- Content here -->
+
+
+        <!-- jumbotron -->
+        <div class="jumbotron">
+            <h1 class="display-10">Survey Questions</h1>
+            <p>
+                <h4 class="display-8"> About You</h4>
+            </p>
+            <hr class="my-4">
+
+
+            <div class="row alert alert-light">
+                <div class="col-4">
+                    Name (Required)
+                </div>
+                <div class="col-8">
+                    <div class="input-group mb-3">
+                        <input type="text" id='name' class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row alert alert-light">
+                <div class="col-4">
+                    Link to Photo Image (Required)
+                </div>
+                <div class="col-8">
+                    <div class="input-group mb-3">
+                        <input type="text" id='photo' class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- end jumbotron -->
+        <!-- start of questions -->
+
+        <div class="container">
+
+            <div class="row alert alert-primary">
+                <div class="col-1">
+                    Q 1
+                </div>
+                <div class="col-8">
+                    You feel listening is more important than talking
+                </div>
+                <div class="col">
+                    <select class="custom-select" id="q1">
+                        <option value="-1" selected>Choose...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row alert alert-secondary">
+                <div class="col-1">
+                    Q 2
+                </div>
+                <div class="col-8">
+                    You would rather be alone for the rest of your life than always be surrounded by annoying people
+                </div>
+                <div class="col">
+                    <select class="custom-select" id="q2">
+                        <option value="-1" selected>Choose...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="row alert alert-success">
+                <div class="col-1">
+                    Q 3
+                </div>
+                <div class="col-8">
+                    You would rather be poor and help people over becoming incredibly rich by hurting people
+                </div>
+                <div class="col">
+                    <select class="custom-select" id="q3">
+                        <option value="-1" selected>Choose...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row alert alert-danger">
+                <div class="col-1">
+                    Q 4
+                </div>
+                <div class="col-8">
+                    You would rather live your entire life in a virtual reality, where all you wishes are granted, over living in the real world
+                </div>
+                <div class="col">
+                    <select class="custom-select" id="q4">
+                        <option value="-1" selected>Choose...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row alert alert-warning">
+                <div class="col-1">
+                    Q 5
+                </div>
+                <div class="col-8">
+                    You would rather be the first person to explore a planet , over being an inventor of a drug that cures deadly diseases
+                </div>
+                <div class="col">
+                    <select class="custom-select" id="q5">
+                        <option value="-1" selected>Choose...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row alert alert-info">
+                <div class="col-1">
+                    Q 6
+                </div>
+                <div class="col-8">
+                    You feel more energentic after spending time with a group of people
+                </div>
+                <div class="col">
+                    <select class="custom-select" id="q6">
+                        <option value="-1" selected>Choose...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row alert alert-warning">
+                <div class="col-1">
+                    Q 7
+                </div>
+                <div class="col-8">
+                    You would rather have a horrible job, but be able to retire comfortably in 10 years over having your dream job, but have
+                    to work until the day you die.
+
+                </div>
+                <div class="col">
+                    <select class="custom-select" id="q7">
+                        <option value="-1" selected>Choose...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row alert alert-primary">
+                <div class="col-1">
+                    Q 8
+                </div>
+                <div class="col-8">
+                    You would rather always be 20 minutes early over always being 10 minutes late
+                </div>
+                <div class="col">
+                    <select class="custom-select" id="q8">
+                        <option value="-1" selected>Choose...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row alert alert-secondary">
+                <div class="col-1">
+                    Q 9
+                </div>
+                <div class="col-8">
+                    You would rather always wear your shirts 2 sizes too big over one size too small
+                </div>
+                <div class="col">
+                    <select class="custom-select" id="q9">
+                        <option value="-1" selected>Choose...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row alert alert-success">
+                <div class="col-1">
+                    Q 10
+                </div>
+                <div class="col-8">
+                    You want to find a partner that will make you try something dangerous, like skydiving
+                </div>
+                <div class="col">
+                    <select class="custom-select" id="q10">
+                        <option value="-1" selected>Choose...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="btn btn-primary">Submit</a>
+
+
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">
+
+                    <a href="/api/friends">API Friends List</a> |
+                    <a href="https://github.com/JohnGit54/FriendFinder">GitHub Repo</a>
+                </span>
+            </div>
+        </footer>
 </body>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+
+        console.log(" Doc ready");
+
+        $(".btn").click(function () {
+            event.preventDefault();
+            console.log("buttton clicked");
+            if (!validateForm()) {
+                alert("Please fill all fields");
+                return false;
+            };
+            //lolad user informatin object
+            var userObject = loadUserJson();
+            //post object to server
+            //$.post(URL,data,callback);
+            $.post("/api/friends", userObject)
+
+        });
+
+
+
+        function validateForm() {
+            if ($('#name').val() === "") { return false; }
+            if ($('#photo').val() === "") { return false; }
+            if ($('#q1').val() < 0) { return false; }
+            if ($('#q2').val() < 0) { return false; }
+            if ($('#q3').val() < 0) { return false; }
+            if ($('#q4').val() < 0) { return false; }
+            if ($('#q5').val() < 0) { return false; }
+            if ($('#q6').val() < 0) { return false; }
+            if ($('#q7').val() < 0) { return false; }
+            if ($('#q8').val() < 0) { return false; }
+            if ($('#q9').val() < 0) { return false; }
+            if ($('#q10').val() < 0) { return false; }
+            return true;
+        }
+
+        var loadUserJson = function () {
+            var userObj = {
+                name: $('#name').val(),
+                photo: $('#photo').val(),
+                scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(),
+                $('#q4').val(), $('#q5').val(), $('#q6').val(),
+                $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val()]
+            }
+            return userObj;
+        }
+    })
+
+</script>
+
 </html>
