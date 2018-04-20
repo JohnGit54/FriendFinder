@@ -18,7 +18,7 @@ var friends = [
     },
     {
         "name": "Shemp",
-        "photo": "../data/images/shemp.png",
+         "photo": "./images/shemp.png",
         "scores": [
             1,
             1,
@@ -34,7 +34,7 @@ var friends = [
     },
     {
         "name": "Larry",
-        "photo": "../data/images/larry.png",
+        "photo": "./images/larry.png",
         "scores": [
             2,
             2,
@@ -50,7 +50,7 @@ var friends = [
     },
     {
         "name": "Curly",
-        "photo": "../data/images/curly.png",
+        "photo": "./images/curly.png",
         "scores": [
             3,
             3,
@@ -66,7 +66,7 @@ var friends = [
     },
     {
         "name": "Moe",
-        "photo": "../data/images/moe.png",
+        "photo": "./images/moe.png",
         "scores": [
             5,
             5,
