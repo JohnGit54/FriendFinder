@@ -43,7 +43,9 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p id="matched1"> </p>
+                        <p id="matched1">
+                            <div id="imagediv"></div>
+                        </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" id='btnCLose' data-dismiss="modal">Close</button>
@@ -284,7 +286,7 @@
             </div>
         </div>
 
-        <a href="#" class="btn btn-primary" id='subby' >Submit</a>
+        <a href="#" class="btn btn-primary" id='subby'>Submit</a>
 
 
         <footer class="footer">
@@ -330,14 +332,22 @@
                 $('.modal').show();
                 $('#matched1').empty();
                 var xname = "<h3>" + data.name + '</h3>';
-                var img = $('<img id="dynamic" height="100px" width="100px">');              
-                img.attr('src', data.photo);
-                img.attr('alt', "image of "+ data.photo);
-                img.appendTo('#imagediv');
-               
+                //var img = $('<img  height="100px" width="100px">');              
+                // var img = $('<img id="dynamic">');                             
+                // img.attr('src', data.photo);
+                // img.attr('alt', "image of "+ data.photo);
+                // img.css({'width' : '150px' , 'height' : '150px'});
+                // img.appendTo('#imagediv');
+                var img = $('<img />', {
+                    id: 'Myid',
+                    src: data.photo,
+                    alt: 'Image of ' + data.name
+                });
+                img.appendTo($('#imagediv'));
+
                 $('#matched1').append(xname);
                 $('#matched1').append(img);
-                    console.log(data.photo);
+                console.log(data.photo);
             })
 
         });
