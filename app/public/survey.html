@@ -11,11 +11,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
 
+
     <!-- bootrap -jquery <popper class="js"></popper> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
+    <!-- modal issue -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- this jquery needed for ajax .post -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 
 
     <title>Survey</title>
@@ -25,6 +31,28 @@
 
     <div class="container">
         <!-- Content here -->
+
+        <!-- adding modal -->
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Your Perfect Match</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="matched1"> </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id='btnCLose' data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of modal -->
+
 
 
         <!-- jumbotron -->
@@ -62,6 +90,8 @@
         <!-- start of questions -->
 
         <div class="container">
+
+
 
             <div class="row alert alert-primary">
                 <div class="col-1">
@@ -254,7 +284,7 @@
             </div>
         </div>
 
-        <a href="#" class="btn btn-primary">Submit</a>
+        <a href="#" class="btn btn-primary" id='subby' >Submit</a>
 
 
         <footer class="footer">
@@ -266,29 +296,67 @@
                 </span>
             </div>
         </footer>
+
 </body>
 
 <script language="javascript" type="text/javascript">
     $(document).ready(function () {
+        $('.modal').hide();
+        // click anywhere to hide modal
+        $("div").on("click", function () {
+            $('.modal').hide();
+        })
 
-        console.log(" Doc ready");
+        $('#btnCLose').on("click", function () {
+            $('.modal').hide();
+        })
 
-        $(".btn").click(function () {
+
+        $("#subby").click(function () {
             event.preventDefault();
-            console.log("buttton clicked");
+            // console.log("buttton clicked");
             if (!validateForm()) {
                 alert("Please fill all fields");
                 return false;
             };
-            //lolad user informatin object
+            //load user informatin object
             var userObject = loadUserJson();
+            //console.log(userObject);
+
             //post object to server
-            //$.post(URL,data,callback);
-            $.post("/api/friends", userObject)
+            //$.post(URL,data,callback);           
+            $.post('/api/friends', userObject, function (data) {
+                console.log(JSON.stringify(data));
+                $('.modal').show();
+                $('#matched1').empty();
+                var xname = "<h3>" + data.name + '</h3>';
+                var img = $('<img id="dynamic" height="100px" width="100px">');              
+                img.attr('src', data.photo);
+                img.attr('alt', "image of "+ data.photo);
+                img.appendTo('#imagediv');
+               
+                $('#matched1').append(xname);
+                $('#matched1').append(img);
+                    console.log(data.photo);
+            })
 
         });
 
 
+
+
+
+        var loadUserJson = function () {
+            var userObj = {
+                name: $('#name').val(),
+                photo: $('#photo').val(),
+                scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(),
+                $('#q4').val(), $('#q5').val(), $('#q6').val(),
+                $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val()]
+            }
+            //console.log(userObj);
+            return userObj;
+        }
 
         function validateForm() {
             if ($('#name').val() === "") { return false; }
@@ -306,16 +374,7 @@
             return true;
         }
 
-        var loadUserJson = function () {
-            var userObj = {
-                name: $('#name').val(),
-                photo: $('#photo').val(),
-                scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(),
-                $('#q4').val(), $('#q5').val(), $('#q6').val(),
-                $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val()]
-            }
-            return userObj;
-        }
+
     })
 
 </script>
